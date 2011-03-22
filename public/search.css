@@ -1,0 +1,106 @@
+body {
+	font:9pt Verdana;
+	color:black;
+	background-color:white;
+	max-width:8.5in;
+	margin:0 auto;
+}
+a#title {
+	color:black;
+	text-decoration:none;
+}
+a#title:hover {
+	color: mediumblue;
+	text-decoration: underline;
+}
+p#newSearch{
+	float:right;
+	position:relative;
+	bottom:2pt;	/*	This actually makes it 2pts lower than the bottom of the title, but it looks better because of the optical illusion of the wide spacing with the text near it.	*/
+}
+p#stupidIE,div#stupidWebKit,div#noJS,div#noResults,tr.toolbar,tr.more>td td:first-child,tr.sec,tr.more,span.hidden{
+	display:none;
+}
+div#stupidWebKit,p#stupidIE,p#loading,div#noResults>p:first-child{
+	font-size:10.5pt;
+}
+table#searchResults, table#searchResults table{
+	border:none;
+	border-collapse:collapse;
+	width:100%;
+}
+table#searchResults th{
+	background-color:mediumblue;
+	color:white;
+	font-weight:bold;
+	font-size:10pt;
+}
+table#searchResults>tbody:hover{
+	outline:solid thin lightskyblue;
+}
+tr.sec tbody:hover{
+	background-color:#FFFDE0;
+}
+tbody.bg0{
+	background-color:#FFF;
+}
+tbody.bg1,tbody.bg3{
+	background-color:#E8F8FF;
+}
+tbody.bg2{
+	background-color:#D4F4FF;
+}
+table#searchResults>tbody.selected{
+	display:table-row-group !important;	/*don't want to hide this when hiding bad results*/
+	outline:solid thin black;
+}
+table#searchResults>tbody.selected:hover{
+	outline:solid 2px lightskyblue;
+}
+tr.sec tbody.selected,tr.sec tbody.selected tbody{
+	background-color:#FFFDC0;
+}
+tr.bad,tr.bad+tr+tr{
+	color:gray;
+}
+tbody.selected>tr{
+	color:black;
+}
+table#searchResults td{
+	margin:0;
+	padding:1pt 2pt;
+	line-height:11pt;
+}
+table#searchResults td:first-child,tr.more>td+td,tr.sec>td+td{
+	width:1px;	/* Not literally, just minimizes width per standardized table layout algorithm. */
+}
+table#searchResults td[colspan="7"]{
+	padding:0 2pt 3pt 2pt;
+}
+tbody#badResults td{
+	padding:2pt !important;
+}
+td.time,td.units{
+	text-align:center;
+}
+td.bad{
+	font-weight:bold;
+	color:red;
+}
+td.edd{
+	font-weight:bold;
+	color:black;	/*I don't want .bad to make it gray*/
+}
+table#searchResults input{
+	vertical-align:text-top;
+	cursor:pointer;
+}
+table#searchResults a[href="javascript:void(0)"]{
+	color:mediumblue;
+	text-decoration:underline;
+}
+big,img{
+	font-size:125%;
+	vertical-align:middle;
+	border:none;
+}

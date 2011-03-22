@@ -1,0 +1,373 @@
+<div id="searchForm">
+<table width="590" cellpadding="0" cellspacing="2" border="0">
+	<form onsubmit="searchFormOnSubmit(this);return false;">
+   
+   <TR VALIGN="CENTER">
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; Semester</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<SELECT NAME="p_term"><option value="SP">Spring 2010 or -- Choose a Different Semester --
+
+<option value="FL">Fall 2009
+<option value="SU">Summer 2009
+  </select></TD>
+
+    <TD>&nbsp;</TD>
+  </TR>
+
+   <TR VALIGN="CENTER">
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; Course Classifications</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<SELECT NAME="p_classif"><option value="">-- Choose a Course Classification --
+
+<option value="L">lower division (numbered 1 through 99)
+<option value="U">upper division (100-199)
+<option value="G">graduate (200-299)
+<option value="P">professional (300-399)
+<option value="M">special study for master's exam (601)
+<option value="D">special study for doctoral qualifying exam (602)
+<option value="O">Other
+  </select></TD>
+
+    <TD>&nbsp;</TD>
+  </TR>
+
+   <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; Department Name</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<SELECT NAME="p_deptname"><option value="">-- Choose a Department Name --
+
+<option>Aerospace Studies
+<option>African American Studies
+<option>Afrikaans
+<option>Agricultural and Environmental Chemistry
+<option>Agricultural and Resource Economics and Policy
+<option>Altaic
+<option>American Studies
+<option>Ancient History and Mediterranean Archaeology
+<option>Anthropology
+<option>Applied Science and Technology
+<option>Arabic
+<option>Architecture
+<option>Asian American Studies Program
+<option>Asian Studies
+<option>Astronomy
+<option>Bengali
+<option>Bioengineering
+<option>Biology
+<option>Biophysics
+<option>Buddhist Studies
+<option>Business Administration Undergraduate Program
+<option>Business Administration Doctoral Program
+<option>Catalan
+<option>Celtic Studies
+<option>Chemical Engineering
+<option>Chemistry
+<option>Chicano Studies Program
+<option>Chinese
+<option>City and Regional Planning
+<option>Civil and Environmental Engineering
+<option>Classics
+<option>Cognitive Science
+<option>College Writing Program
+<option>Comparative Biochemistry
+<option>Comparative Literature
+<option>Computational and Genomic Biology
+<option>Computer Science
+<option>Critical Theory Graduate Group
+<option>Cuneiform
+<option>Demography
+<option>Development Studies
+<option>Dutch
+<option>Earth and Planetary Science
+<option>East Asian Languages and Cultures
+<option>East European Studies
+<option>Economics
+<option>Education
+<option>Egyptian
+<option>Electrical Engineering
+<option>Energy and Resources Group
+<option>Engineering
+<option>English
+<option>Environmental Design
+<option>Environmental Economics and Policy
+<option>Environmental Science, Policy, and Management
+<option>Environmental Sciences
+<option>Ethnic Studies
+<option>Ethnic Studies Graduate Group
+<option>Eurasian Studies
+<option>Film Studies
+<option>Folklore
+<option>French
+<option>Gender and Women's Studies
+<option>Geography
+<option>German
+<option>Graduate Student Professional Development Program
+<option>Greek
+<option>Health and Medical Sciences
+<option>Hebrew
+<option>Hindi-Urdu
+<option>History
+<option>History of Art
+<option>Indigenous Languages of the Americas
+<option>Industrial Engineering and Operations Research
+<option>Information
+<option>Integrative Biology
+<option>Interdisciplinary Studies Field Major
+<option>International and Area Studies
+<option>Iranian
+<option>Italian Studies
+<option>Japanese
+<option>Jewish Studies
+<option>Journalism
+<option>Khmer
+<option>Korean
+<option>Landscape Architecture
+<option>Language Proficiency Program
+<option>Latin
+<option>Latin American Studies
+<option>Law
+<option>Legal Studies
+<option>Lesbian, Gay, Bisexual and Transgender Studies
+<option>Letters and Science
+<option>Linguistics
+<option>Malay/Indonesian
+<option>Materials Science and Engineering
+<option>Mathematics
+<option>Mechanical Engineering
+<option>Media Studies
+<option>Medieval Studies
+<option>Middle Eastern Studies
+<option>Military Affairs
+<option>Military Science
+<option>Molecular and Cell Biology
+<option>Music
+<option>Nanoscale Science and Engineering
+<option>Native American Studies
+<option>Natural Resources
+<option>Naval Science
+<option>Near Eastern Studies
+<option>Neuroscience
+<option>New Media
+<option>Nuclear Engineering
+<option>Nutritional Sciences and Toxicology
+<option>Optometry
+<option>Peace and Conflict Studies
+<option>Persian
+<option>Philosophy
+<option>Physical Education
+<option>Physics
+<option>Plant and Microbial Biology
+<option>Political Economy of Industrial Societies
+<option>Political Science
+<option>Portuguese
+<option>Practice of Art
+<option>Psychology
+<option>Public Health
+<option>Public Policy
+<option>Punjabi
+<option>Religious Studies
+<option>Rhetoric
+<option>Sanskrit
+<option>Scandinavian
+<option>Science and Mathematics Education
+<option>Semitics
+<option>Slavic Languages and Literatures
+<option>Social Welfare
+<option>Sociology
+<option>South and Southeast Asian Studies
+<option>South Asian
+<option>Southeast Asian
+<option>Spanish
+<option>Statistics
+<option>Tagalog
+<option>Tamil
+<option>Thai
+<option>Theater, Dance, and Performance Studies
+<option>Tibetan
+<option>Turkish
+<option>Undergraduate and Interdisciplinary Studies
+<option>Vietnamese
+<option>Vision Science
+<option>Visual Studies
+<option>Yiddish
+  </select></TD>
+    
+    <TD>&nbsp;</TD>
+  </TR> 
+ 
+     <TR VALIGN="CENTER">
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; Course Prefixes/Suffixes</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<SELECT NAME="p_presuf" style="width:2.3in"><option value="">-- Choose a Course Prefix/Suffix --
+
+<option value="C">C prefix - cross-listed
+<option value="H">H prefix - honors
+<option value="N">N prefix - Summer Session not equivalent to regular session with the same number
+<option value="R">R prefix - meets reading and composition requirement 
+<option value="AC">AC suffix - meets American Cultures requirement
+  </select></TD>
+
+    <TD>&nbsp;</TD>
+  </TR>
+ 
+     <TR VALIGN="CENTER">
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; Summer Session</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<SELECT NAME="p_session">
+            <option value="">-- Choose a Session --  </option>
+            <option value="A">A - 1st 6 Week </option>
+            <option value="B">B - 10 Week </option>
+            <option value="C">C - 8 Week </option>
+            <option value="D">D - 2nd 6 Week </option>
+            <option value="E">E - 3 Week </option>
+            <option value="O">O - Other   </option>
+  </select></TD>
+
+    <TD>&nbsp;</TD>
+  </TR> 
+
+  <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial, sans-serif" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://registrar.berkeley.edu/Scheduling/deptabb.html">Department Abbreviation</A></B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_dept VALUE="">&nbsp;<FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     CHEM, POL SCI, MCELLBI</B></FONT></TD>
+    <TD>&nbsp;</TD>
+  </TR>
+ 
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#course">Course Number</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_course VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     1A, H7A, 103, 160B, 25AC</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+   
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#title">Course Title Keyword</B></FONT> </TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_title VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     CALIF, DATABASE, ENVIRON</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+ 
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+	<TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+	 &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#instr">Instructor Name</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_instr VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     SMITH, GREEN</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+  
+  <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#exam">Final Exam Group</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_exam VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     7, 22, NONE, TBA</B></FONT></TD>
+    <TD>&nbsp;</TD>
+  </TR>
+  
+  <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#ccn">Course Control Number</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE=TEXT NAME=p_ccn VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     00507, 12345</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+ 
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#day">Day(s) of the Week</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_day VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     M, TuTh, MTWTF</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+   
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#hour">Hour(s)</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_hour VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     930-11, 10, 2-5</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+  
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://registrar.berkeley.edu/Scheduling/bldgabb.html">Building Name</A></B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_bldg VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     DWINELLE, GPB, NORTH GATE</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+   
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#units">Units/Credit</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_units VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     2, .5, 1-10</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+  
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#restrict">Restrictions</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_restr VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     NONE, FR, GR, CLASS ENTRY CODE REQ</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+  
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="CCCCCC" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#info">Additional Information</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_info VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     SWIMMING, AMERICAN CULTURES</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+  
+ <TR VALIGN="CENTER"> 
+    <TD>&nbsp;</TD>
+    <TD WIDTH="170" BGCOLOR="E6E6E6" NOWRAP><FONT FACE="Verdana, Helvetica, Arial" SIZE="1" COLOR="HHHHHH"><B>
+     &nbsp; <A HREF="http://schedule.berkeley.edu/about.html#status">Status/Last Changed</B></FONT></TD>
+    <TD ALIGN="LEFT" NOWRAP>&nbsp;<INPUT TYPE="TEXT" NAME=p_updt VALUE="">&nbsp;
+    <FONT face="Helvetica, Arial, sans-serif" size="1" color="336699"><B>
+     UPDATED, ADDED, CANCELLED</B></FONT></TD>
+    <TD>&nbsp;</TD>
+ </TR>
+
+ <tr><td>&nbsp;</td></tr>
+
+ <tr valign="center">
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td colspan=2><button><big>Search</big></button></td>
+ </tr>
+</TABLE>
+
+</FORM>
+
