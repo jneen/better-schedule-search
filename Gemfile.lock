@@ -4,17 +4,22 @@ GEM
     abstract (1.0.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    hpricot (0.8.4)
+    kgio (2.3.3)
+    nokogiri (1.4.4)
     rack (1.2.2)
-    sinatra (1.2.0)
+    sinatra (1.2.1)
       rack (~> 1.1)
       tilt (< 2.0, >= 1.2.2)
     tilt (1.2.2)
+    unicorn (3.5.0)
+      kgio (~> 2.3)
+      rack
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   erubis
-  hpricot
+  nokogiri
   sinatra
+  unicorn

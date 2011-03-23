@@ -2,4 +2,8 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'erubis'
-gem 'hpricot'
+gem 'nokogiri'
+
+group :development do
+  gem 'unicorn'
+end
