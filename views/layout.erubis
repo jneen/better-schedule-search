@@ -4,13 +4,10 @@
 
 <title>Better Schedule Search</title>
 
-<link rel="stylesheet" href="search.css"
-<style type="text/css">
-</style>
+<link rel="stylesheet" href="css/search.css" />
 
-<script type="text/javascript" src="jquery.js"></script>
-
-<script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 
 </head>
 <body>
