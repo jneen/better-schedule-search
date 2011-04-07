@@ -4,10 +4,7 @@ Bundler.require
 
 require 'models'
 
-get '/' do
-end
-
 get '/search' do
-  @courses = Searcher.new(request).courses
+  @courses = Searcher.new(params).courses
   erubis :search
 end

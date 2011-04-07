@@ -3,7 +3,7 @@ require 'active_support/core_ext'
 
 $debug = Logger.new('tmp/debug.log')
 
-# this is a gigantic pile of hack.
+# XXX LOL this is a gigantic pile of hack.
 # Luckily Berkeley is probably not going to
 # change this html any time soon.
 
@@ -22,11 +22,12 @@ class Searcher
   def build_url(query)
     out = ""
     out << OSOC_BASE + '?' << query.to_query
+$debug.info(out.inspect)
     out
   end
 
   def load_results(query)
-    courses << open('http://osoc.berkeley.edu/OSOC/osoc?y=0&p_term=FL&p_deptname=--+Choose+a+Department+Name+--&p_classif=--+Choose+a+Course+Classification+--&p_presuf=--+Choose+a+Course+Prefix/Suffix+--&p_dept=computer+science&x=0')
+    courses << open(build_url(query))
   end
 private
   def see_next_results_url(doc)
@@ -278,19 +279,23 @@ class EnrollmentInfo < Entity
   end
 
   cache :fullness do
-    case 8*(enrolled.to_f / limit)
-    when 0...1
-      'Empty'
-    when 1...3
-      '<big>&frac14;</big>Full'
-    when 3...5
-      '<big>&frac12;</big>Full'
-    when 5...7
-      '<big>&frac34;</big>Full'
-    when 7...8
-      'Nearly Full'
+    if enrolled.nil? || limit.nil?
+      'Unknown'
     else
-      'Full'
+      case 8*(enrolled.to_f / limit)
+      when 0...1
+        'Empty'
+      when 1...3
+        '<big>&frac14;</big>Full'
+      when 3...5
+        '<big>&frac12;</big>Full'
+      when 5...7
+        '<big>&frac34;</big>Full'
+      when 7...8
+        'Nearly Full'
+      else
+        'Full'
+      end
     end
   end
 end
