@@ -8,5 +8,6 @@ get '/' do
 end
 
 get '/search' do
-  @courses = Searcher.new(request.params).courses
+  @courses = Searcher.new(request).courses
+  erubis :search
 end

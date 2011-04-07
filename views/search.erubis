@@ -1,0 +1,95 @@
+<div>
+
+<p id="newSearch"><a href="schedule.html">New Search</a></p>
+
+<h1><a id="title" href="schedule.html" title="New Search">Better Schedule Search</a></h1>
+
+</div>
+
+<p>By Jay and <a href="mailto:laughinghan@berkeley.edu">Han (laughinghan@berkeley.edu)</a>, with all the hard work by <b><a href="http://jquery.com">jQuery</a></b>. Works best in <b><a href="http://my.opera.com/community/download.pl?ref=yhwhan&p=opera_desktop">Opera</a></b>.</p>
+
+<pre id="debug"></pre>
+
+<p id="stupidIE">It seems you are using Microsoft Internet Explorer. If so this probably will not work. Try <a href="http://my.opera.com/community/download.pl?ref=yhwhan&p=opera_desktop">Opera</a> instead.</p>
+
+<script type="text/javascript">
+document.write('<p id="loading">Loading</p><div id="noJS">');
+</script>
+<p>It seems you cannot or do not wish to use JavaScript. If so this will not work for you. <a href="http://schedule.berkeley.edu/">Try the original Online Schedule of Classes instead.</a></p>
+<script type="text/javascript">
+document.write('</div>');
+</script>
+
+<div id="noResults">
+<p>No results.</p>
+<p>I'm sorry, but apparently there are no classes that match your search criteria. Not my fault, just what Berkeley's servers are telling me. <a>See for yourself</a>.</p>
+</div>
+
+<table id="searchResults">
+<thead>
+	<tr>
+		<th>&nbsp;
+		<th>Designation
+		<th>Title
+		<th>Instructor
+		<th>Time
+		<th>Units
+		<th colspan=2>&nbsp;
+	<tr class="toolbar">
+		<td colspan=8><a href="">Undo</a> | <a href="">Redo</a> | <a href="">All</a> | <a href="">None</a> | <a href="">Invert</a> | <a href="">Full</a> | <a href="">Not Open</a> | <a href="">Hide Selection</a> | <a href="">Show Hidden</a>
+</thead>
+<%- @courses.each_with_index do |course, i| -%>
+<tbody class="bg<%= i % 4 %>">
+  <tr<%= ' class="bad"' if course.bad? %>>
+    <td>
+      <input title="Select for more info" type="checkbox">
+    </td>
+  <td><%= course.desig %></td>
+  <td><%= course.title %></td>
+  <td><%= course.instructor %></td>
+  <td class="time"><%= course.time %></td>
+  <td class="units"><%= course.units %></td>
+  <td><%= course.enrollment.fullness %></td>
+  <td><%= course.edd? ? '<span class="flag">EDD</span>' : '&nbsp;' %></td>
+</tr>
+        
+<tr class="more">
+  <td></td>
+    <td colspan="7"><table>
+      <tr>
+        <td>As&nbsp;of&nbsp;<%= course.enrollment.as_of %>:
+          Seats:<%= course.enrollment.limit %>
+          Available: <%= course.enrollment.available %>
+        <td><%= "Room: #{course.location}" if course.location %></td>
+        <%- if course.final.group.present? -%>
+        <td>Final Exam Group <%= course.final.group %>: <%= course.final.time %></td>
+        <%- end -%>
+        <%- if course.session.present? -%>
+        <td><%= course.session %></td>
+        <%- end -%>
+        <td>CCN: <%= course.ccn %></td>
+      </tr>
+      <tr><!--links-->
+      <td colspan="5">
+        <a target="_blank"
+           href="<%= course.infobears_url %>"
+        >Current Info</a>
+        | <a 
+          target="_blank" 
+          href="<%= course.catalog_url %>"
+        >Catalog Description</a>
+        <%- if course.ratemyprof_url.present? -%>
+        | <a
+          target="_blank"
+          href="<%= course.ratemyprof_url %>"
+        >Rate My Professor</a>
+        <%- end -%>
+      </tr>
+    </table></td>
+  </tr>
+  <%- if course.sections.any? -%>
+  <%= erubis :_sections, :locals => {:sections => course.sections} %>
+  <%- end -%>
+</tbody>
+<%- end -%>
+</table>

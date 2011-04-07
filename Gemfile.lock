@@ -1,12 +1,26 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    abstract (1.0.0)
-    erubis (2.6.6)
-      abstract (>= 1.0.0)
+    ZenTest (4.5.0)
+    activesupport (3.0.5)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    diff-lcs (1.1.2)
+    erubis (2.7.0)
+    i18n (0.5.0)
     kgio (2.3.3)
     nokogiri (1.4.4)
     rack (1.2.2)
+    rack-test (0.5.7)
+      rack (>= 1.0)
+    rspec (2.5.0)
+      rspec-core (~> 2.5.0)
+      rspec-expectations (~> 2.5.0)
+      rspec-mocks (~> 2.5.0)
+    rspec-core (2.5.1)
+    rspec-expectations (2.5.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.5.0)
     sinatra (1.2.1)
       rack (~> 1.1)
       tilt (< 2.0, >= 1.2.2)
@@ -19,7 +33,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
+  autotest
   erubis
+  i18n
   nokogiri
+  rack-test
+  rspec
   sinatra
   unicorn
