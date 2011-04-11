@@ -173,32 +173,14 @@ p :attr => attr, :klass => self.class
   end
 end
 
-class Course < Entity
+# common superclass for Course and Section
+class CourseProto < Entity
   def rows
     @rows ||= root.css('tr')
   end
 
-  def inflate!
-    super
-    sections.each(&:inflate!)
-  end
-
-  def clear
-    _sections = self.sections
-    super
-    info[:sections] = _sections
-  end
-
-  attribute :sections do
-    []
-  end
-
   attribute :desig do
     line(1, :raw => true).children[0].text
-  end
-
-  attribute :catalog_url do
-    line(1, :raw => true).children[1].css('a').attr('href').value
   end
 
   attribute :updated do
@@ -211,18 +193,6 @@ class Course < Entity
   attribute :ccn do
     line(5) =~ /^(\d+)/
     $1.to_i
-  end
-
-  attribute :units do
-    line(6).to_i
-  end
-
-  attribute :session do
-    # TODO
-  end
-
-  attribute :final do
-    Final.new(line(7))
   end
 
   attribute :restrictions do
@@ -275,20 +245,6 @@ class Course < Entity
     end # else nil
   end
 
-  attribute :ratemyprof_url do
-    instructor =~ /^(\w+)/
-    if $1
-      prof = $1
-      desig =~ /^(\w+)/
-      dept = $1
-      "http://www.ratemyprofessors.com/SelectTeacher.jsp?" << {
-        :sid => 1072, # berkeley's school id?
-        :the_dept => dept,
-        :letter => prof # NB: these params are stupidly named.
-      }.to_param
-    end
-  end
-
   def css_classes
     c = []
     c << 'bad' if bad?
@@ -309,7 +265,55 @@ class Course < Entity
   end
 end
 
-class Section < Course
+class Course < CourseProto
+  def inflate!
+    super
+    sections.each(&:inflate!)
+  end
+
+  def clear
+    _sections = self.sections
+    super
+    info[:sections] = _sections
+  end
+
+  attribute :sections do
+    []
+  end
+
+  attribute :catalog_url do
+    line(1, :raw => true).children[1].css('a').attr('href').value
+  end
+
+  attribute :units do
+    line(6).to_i
+  end
+
+  attribute :session do
+    # TODO
+  end
+
+  attribute :final do
+    Final.new(line(7))
+  end
+
+  attribute :ratemyprof_url do
+    instructor =~ /^(\w+)/
+    if $1
+      prof = $1
+      desig =~ /^(\w+)/
+      dept = $1
+      "http://www.ratemyprofessors.com/SelectTeacher.jsp?" << {
+        :sid => 1072, # berkeley's school id?
+        :the_dept => dept,
+        :letter => prof # NB: these params are stupidly named.
+      }.to_param
+    end
+  end
+
+end
+
+class Section < CourseProto
 end
 
 class EnrollmentInfo < Entity
