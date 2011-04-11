@@ -13,4 +13,5 @@ group :development do
   gem 'rspec'
   gem 'autotest'
   gem 'rack-test'
+  gem 'heroku'
 end

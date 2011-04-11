@@ -14,6 +14,11 @@ helpers do
   end
 end
 
+get '/' do
+  # TODO: make this better
+  File.read('public/index.html')
+end
+
 get '/search' do
   @courses = Searcher.new(params).courses
   erubis :search
