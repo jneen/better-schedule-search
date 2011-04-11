@@ -205,11 +205,12 @@ class CourseProto < Entity
   end
 
   attribute :note do
-    line(9)[0..-5]
+    l = line(9)
+    l && l[0..-5]
   end
 
   attribute :edd? do
-    note.include? 'EARLY DROP DEADLINE'
+    note and note.include? 'EARLY DROP DEADLINE'
   end
 
   attribute :bad? do
@@ -224,7 +225,12 @@ class CourseProto < Entity
   end
 
   attribute :time do
-    time_and_location[0]
+    t = time_and_location[0]
+    if t and t.include? 'UNSCHED'
+      nil
+    else
+      t
+    end
   end
 
   attribute :location do
