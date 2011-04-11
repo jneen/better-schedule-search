@@ -1,4 +1,4 @@
-;(function() {
+;(function($) {
   function bodyOnLoad(){
     if ($.browser.msie) {
       $('p#stupidIE').show();
@@ -27,4 +27,4 @@
   }
 
   $(bodyOnLoad);
-});
+})(jQuery);
