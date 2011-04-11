@@ -22,8 +22,6 @@
     $('table#searchResults a[href="javascript:void(0)"]').live('click',function(){
       $(this).parent().siblings().andSelf().toggle();
     });
-
-    $('#searchForm').submit(searchFormOnSubmit);
   }
 
   $(bodyOnLoad);
