@@ -1,5 +1,7 @@
 ;(function($) {
   function bodyOnLoad(){
+    $('#loading').hide();
+
     if ($.browser.msie) {
       $('p#stupidIE').show();
     }
