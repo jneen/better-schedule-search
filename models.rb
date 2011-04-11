@@ -13,7 +13,7 @@ class Searcher
   end
 
   def initialize(query)
-    load_results(query.dup)
+    load_results(build_url(query))
   end
 
   BOGUS_NEXT_URL = 'http://schedule.berkeley.edu/?PageID=srchfall.html'
@@ -21,12 +21,19 @@ class Searcher
 
   def build_url(query)
     out = ""
-    out << OSOC_BASE + '?' << query.to_query
+    out << OSOC_BASE + '?' << query.to_param
     out
   end
 
-  def load_results(query)
-    courses << open('http://osoc.berkeley.edu/OSOC/osoc?y=0&p_term=FL&p_deptname=--+Choose+a+Department+Name+--&p_classif=--+Choose+a+Course+Classification+--&p_presuf=--+Choose+a+Course+Prefix/Suffix+--&p_dept=computer+science&x=0')
+  def load_results(url)
+    doc = Nokogiri::HTML(open(url))
+    courses << doc
+
+    next_url = see_next_results_url(doc)
+
+    if next_url && next_url != BOGUS_NEXT_URL
+      load_results(next_url)
+    end
   end
 private
   def see_next_results_url(doc)
@@ -41,7 +48,8 @@ private
       children[2].
       children[1].
       attr('href')
-  rescue nil #probably bad.
+  rescue
+    nil # probably bad
   end
 end
 
@@ -56,8 +64,7 @@ class CourseList
     end
   end
 
-  def push(html)
-    doc = Nokogiri::HTML(html)
+  def push(doc)
     tables.concat doc.css('table')[1..-2]
   end
   alias << push
@@ -185,7 +192,9 @@ class Course < Entity
     loc && loc.titleize
   end
 
-  cache(:title) { line(1) }
+  cache(:title) do
+    line(1).gsub '(catalog description)', ''
+  end
 
   cache :instructor do
     line(3)
@@ -196,7 +205,6 @@ class Course < Entity
   end
 
   cache :infobears_url do
-    # sorry everybody
     if rows[11]
       line(11, :raw => true).css('a').attr('href').to_s
     end # else nil
@@ -278,19 +286,21 @@ class EnrollmentInfo < Entity
   end
 
   cache :fullness do
-    case 8*(enrolled.to_f / limit)
-    when 0...1
-      'Empty'
-    when 1...3
-      '<big>&frac14;</big>Full'
-    when 3...5
-      '<big>&frac12;</big>Full'
-    when 5...7
-      '<big>&frac34;</big>Full'
-    when 7...8
-      'Nearly Full'
-    else
-      'Full'
+    if !enrolled.nil? && !limit.nil?
+      case 8*(enrolled.to_f / limit)
+      when 0...1
+        'Empty'
+      when 1...3
+        '<big>&frac14;</big>Full'
+      when 3...5
+        '<big>&frac12;</big>Full'
+      when 5...7
+        '<big>&frac34;</big>Full'
+      when 7...8
+        'Nearly Full'
+      else
+        'Full'
+      end
     end
   end
 end
