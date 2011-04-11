@@ -21,3 +21,7 @@ get '/search' do
   @courses = Searcher.new(params).courses
   erubis :search
 end
+
+get '/search.json' do
+  Searcher.new(params).courses.to_json
+end
