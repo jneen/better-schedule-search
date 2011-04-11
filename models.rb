@@ -92,8 +92,13 @@ private
   def yield_each
     while table = tables.shift
       course = Course.new(table)
+      next if course.cancelled?
+
       until tables.empty? || lecture?(tables.first)
-        course.sections << Section.new(tables.shift)
+        section = Section.new(tables.shift)
+        next if section.cancelled?
+
+        course.sections << section
       end
       courses << course
       yield course
@@ -225,6 +230,10 @@ class CourseProto < Entity
   attribute :location do
     loc = time_and_location[1]
     loc && loc.titleize
+  end
+
+  attribute :cancelled? do
+    time and time.include? 'CANCELLED'
   end
 
   attribute(:title) do
