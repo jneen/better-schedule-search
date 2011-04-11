@@ -1,6 +1,11 @@
 <tr><!--make this display:none eventually-->
   <td></td>
-  <td colspan="7"><%= sections.count %> secondary sections</td>
+  <td colspan="7">
+    <%=
+      sections.count
+    %> secondary <%=
+      pluralize('sections', sections.count) %>
+  </td>
   </tr>
   <tr class="sec">
     <td></td>
