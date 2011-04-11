@@ -31,7 +31,6 @@ body {
 #stupidWebKit,
 #noJS,
 #noResults,
-.toolbar,
 tr.more > td td:first-child,
 tr.sec,
 tr.more,
@@ -145,11 +144,6 @@ td.edd {
 #searchResults input {
   vertical-align: text-top;
   cursor: pointer;
-}
-
-#searchResults a[href="javascript: void(0)"]{
-  color: mediumblue;
-  text-decoration: underline;
 }
 
 big,

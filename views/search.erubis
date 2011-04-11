@@ -35,8 +35,6 @@ document.write('</div>');
 		<th>Time
 		<th>Units
 		<th colspan=2>&nbsp;
-	<tr class="toolbar">
-		<td colspan=8><a href="">Undo</a> | <a href="">Redo</a> | <a href="">All</a> | <a href="">None</a> | <a href="">Invert</a> | <a href="">Full</a> | <a href="">Not Open</a> | <a href="">Hide Selection</a> | <a href="">Show Hidden</a>
 </thead>
 <%- @courses.each_with_index do |course, i| -%>
 <tbody class="bg<%= i % 4 %>">
